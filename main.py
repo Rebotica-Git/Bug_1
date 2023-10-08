@@ -18,7 +18,7 @@ class Game:
 
     def analyze(self):
         def sort_key(e):
-            return e[1]
+            return e[1] * -1
         self.enemies = sorted(self.enemies, key=sort_key)
         minimal = self.enemies[0]
         maximal = self.enemies[-1]
@@ -30,7 +30,7 @@ class Game:
         self.fight()
 
     def fight(self):
-        loser = self.player.attack(self.enemies[-1])
+        loser = self.player.attack(self.enemies[0])
         if loser:
             loser = self.enemies[-1].attack(self.player)
             if loser:

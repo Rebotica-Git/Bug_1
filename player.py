@@ -11,6 +11,6 @@ class Player:
         victim.counter += 1
         print(f"Удар по {victim.name}! -{self.dmg}❤️.")
         if victim.hp <= 0:
-            return False
-        else:
             return True
+        else:
+            return False
